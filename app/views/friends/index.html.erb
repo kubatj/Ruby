@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
+<% if user_signed_in? %>
+
 <h1>Friends</h1>
 
 <table class="table table-striped table-hover">
@@ -10,6 +12,7 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Social Media</th>
+      <th scope="col">user Id</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +25,7 @@
       <td><%= friend.email %></td>
       <td><%= friend.phone %></td>
       <td><%= friend.social_media %></td>
+      <td><%= friend.user_id%></td>
       <td>
         <%= link_to "Show this Friend", friend, class:"btn btn-dark" %>
       </td>
@@ -33,3 +37,9 @@
 
 <div>
   <%= link_to "New friend", new_friend_path %>
+
+  <% else %>
+    <h1>Hello first rail page</h1>
+
+      this is a page...
+  <% end %>
